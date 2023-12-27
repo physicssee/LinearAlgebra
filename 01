@@ -1,5 +1,8 @@
 #01-01
 
+#https://www.scaler.com/topics/matplotlib/arrow-in-matplotlib/
+#https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axis.html
+
 v = np.array([[1, 2]])
 print(v.shape)
 v = np.array([1, 2])
