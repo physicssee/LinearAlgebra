@@ -1,0 +1,46 @@
+#01-01
+
+v = np.array([[1, 2]])
+print(v.shape)
+v = np.array([1, 2])
+print(v.shape)
+# w = np.array([[5, -4]])
+# print(v+w)
+
+v = np.array([1,2])
+w = np.array([4,-6])
+vPlusW = v+w
+vMiusW = v-w
+
+
+print(v[0])
+
+# now plot all three vectors
+plt.figure(figsize=(6,6))
+#
+# a1 = plt.arrow(0,0,v[0],v[1],head_width=.3,width=.1,color='k',length_includes_head=True)
+# a2 = plt.arrow(v[0],v[1],w[0],w[1],head_width=.3,width=.1,color=[.5,.5,.5],length_includes_head=True)
+# a3 = plt.arrow(0,0,vPlusW[0],vPlusW[1],head_width=.3,width=.1,color=[.8,.8,.8],length_includes_head=True)
+
+b1 = plt.arrow(0,0,v[0],v[1],head_width=.3,width=.1,color='k',length_includes_head=True)
+b2 = plt.arrow(0, 0, w[0], w[1],head_width=.3,width=.1,color=[.5,.5,.5],length_includes_head=True)
+b3 = plt.arrow(w[0], w[1], vMiusW[0], vMiusW[1],head_width=.3,width=.1,color=[.8,.8,.8],length_includes_head=True)
+
+
+
+# # make the plot look a bit nicer
+# plt.grid(linestyle='--', linewidth=.5)
+# plt.axis('square')
+# plt.axis([-6,6,-6,6])
+# plt.legend([a1,a2,a3],['v','w','v+w'])
+# plt.title('Vectors v W, and v + W')
+# plt.savefig('Figure_01_02a.png',dpi=300) # write out the fig to a file
+# plt.show()
+
+plt.grid(linestyle='--', linewidth=.5)
+plt.axis('square')
+plt.axis([-6,6,-6,6])
+plt.legend([b1, b2, b3],['v','w','v-w'])
+plt.title('Vectors v W, and v - W')
+plt.savefig('Figure_01_02a.png',dpi=300) # write out the fig to a file
+plt.show()
