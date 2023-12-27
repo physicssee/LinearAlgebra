@@ -1,3 +1,4 @@
+####################
 #01-01
 
 #https://www.scaler.com/topics/matplotlib/arrow-in-matplotlib/
@@ -47,3 +48,32 @@ plt.legend([b1, b2, b3],['v','w','v-w'])
 plt.title('Vectors v W, and v - W')
 plt.savefig('Figure_01_02a.png',dpi=300) # write out the fig to a file
 plt.show()
+
+##########################
+###01-02
+
+v = np.array([1,2,3,4,5])
+v_dim = len(v)
+print(v_dim)
+v_mag = np.linalg.norm(v)
+print(v_mag)
+
+vNorm = 0
+for i in range(v_dim) :
+    vNorm_i = v[i] * v[i]
+    vNorm += vNorm_i
+
+vNorm=math.sqrt(vNorm)
+print(vNorm)
+
+# the function
+def normOfVect(v):
+  return np.sqrt(np.sum(v**2))
+
+# test it on a unit-norm vector
+w = np.array([0,0,1])
+print( normOfVect(w) )
+
+# non-unit-norm vector, and confirm using np.linalg.norm
+w = np.array([1,2,3])
+print( normOfVect(w),np.linalg.norm(w) )
