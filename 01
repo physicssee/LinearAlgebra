@@ -108,3 +108,23 @@ for i in range(len(v)):
 print(math.sqrt(norm))
 v_mag = np.linalg.norm(v)
 print(v_mag)
+
+##########################
+###01-07
+
+v= np.array([1,2,3])
+w= np.array([4,5,6])
+v_w=v.T * w
+sum = 0
+i = 0
+for i in range(len(v_w)):
+    sum += v_w[i]
+print(sum)
+
+w_v = w.T * v
+for i in range(len(w_v)):
+    sum += v_w[i]
+print(sum)
+
+print(np.dot(v,w))
+
