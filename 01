@@ -77,3 +77,34 @@ print( normOfVect(w) )
 # non-unit-norm vector, and confirm using np.linalg.norm
 w = np.array([1,2,3])
 print( normOfVect(w),np.linalg.norm(w) )
+
+
+##########################
+###01-05
+
+v = np.array([[1,2,3],[4,5,6]])
+print(v)
+i= 0
+j =0
+v_t = np.zeros((v.shape[1],v.shape[0]))
+
+for i in range (v.shape[0]):
+    for j in range (v.shape[1]):
+       if i == j:
+           v_t[i,j] = v[i,j]
+       else :
+           v_t[j, i] = v[i, j]
+print(v_t)
+
+
+##########################
+###01-06
+v = np.array([1,2,3,4,5])
+
+norm = 0
+for i in range(len(v)):
+    norm += v[i]*v[i]
+
+print(math.sqrt(norm))
+v_mag = np.linalg.norm(v)
+print(v_mag)
