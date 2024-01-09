@@ -13,3 +13,38 @@ for s in scala_list:
     c_v1[i] = s * v1[i]
     i += 1
 print(c_v1)
+
+
+
+# 2-3
+
+plt.figure(figsize=(6,6))
+plt.xlim(-4, 4)
+plt.ylim(-4, 4)
+
+data = np.random.uniform(-4, 4, 100)
+print(data)
+v1 = np.array([1,3])
+linCombo = np.zeros(v1.shape)
+print(linCombo)
+linCombo = linCombo + (v1 * data[0])
+print(linCombo)
+
+for i in range(len(data)):
+    linCombo_append = v1 * data[i]
+    print(linCombo_append)
+    linCombo= np.vstack([linCombo, np.array(linCombo_append)])
+    # linCombo = np.append(linCombo, np.array(linCombo_append), axis =0)
+    # print("linCombo", linCombo)
+    i += 1
+
+    plt.plot(linCombo[i][0], linCombo[i][1], 'ko')
+
+print(linCombo)
+print(linCombo[0][1])
+
+
+plt.grid()
+plt.text(-4.5,4.5,'A)',fontweight='bold',fontsize=18)
+plt.savefig('Figure_02_07a.png',dpi=300)
+plt.show()
