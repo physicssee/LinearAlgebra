@@ -1,0 +1,122 @@
+##############
+3-1
+
+
+
+x1 = np.array([2, 4])
+y1 = np.array([6, 8])
+
+# 평균
+print(x1[1], len(x1))
+
+def vecter_aver(vector):
+    n = len(vector)
+    i =0
+    vertor_sum = 0
+    for i in range(n):
+        vertor_sum += vector[i]
+    vector_average = vertor_sum/n
+    # print(vector_average)
+    return vector_average
+vecter_aver(x1)
+vecter_aver(y1)
+
+def son_fraction(x, y):
+    n_x = len(x)
+    i =0
+    vertor_sum_x = 0
+    for i in range(n_x):
+        vertor_sum_x += x[i]
+    vector_average_x = vertor_sum_x/n_x
+
+    n_y = len(y)
+    i = 0
+    vertor_sum_y = 0
+    for i in range(n_y):
+        vertor_sum_y += y[i]
+    vector_average_y = vertor_sum_y / n_y
+
+    son_fraction = 0
+    for i in range(len(x)):
+        son_fraction+=(x[i]-vector_average_x)*(y[i]-vector_average_y)
+
+    parent_fraction_1 = 0
+    parent_fraction_2 = 0
+    for i in range(len(x)):
+        parent_fraction_1 += (x[i]-vector_average_x)*(x[i]-vector_average_x)
+        parent_fraction_2 += (y[i] - vector_average_y) * (y[i] - vector_average_y)
+
+    parent_fraction_1_result = math.sqrt(parent_fraction_1)
+    parent_fraction_2_result = math.sqrt(parent_fraction_2)
+    parent_dot = parent_fraction_1_result * parent_fraction_2_result
+
+    peerson_number = son_fraction/parent_dot
+
+    print("peerson_number", peerson_number)
+
+x1 = np.array([2, 5])
+y1 = np.array([6, 11])
+
+son_fraction(x1, y1)
+
+
+
+
+
+
+
+
+
+
+############################################
+##############3-1
+
+# the function
+def corrAndCosine(x,y):
+
+  # compute cosine similarity
+  num = np.dot(x,y) # numerator
+  den = np.linalg.norm(x) * np.linalg.norm(y) # denominator
+  cos = num / den
+
+  # compute correlation (similar to above but mean-centered!)
+  xm  = x-np.mean(x)
+  ym  = y-np.mean(y)
+  num = np.dot(xm,ym) # numerator
+  den = np.linalg.norm(xm) * np.linalg.norm(ym) # denominator
+  cor = num / den
+
+  return cor,cos
+
+
+# test it
+a = np.random.randn(15)
+b = np.random.randn(15)
+
+# compute the correlation and cosine
+r,c = corrAndCosine(a,b)
+
+# confirm that the correlation matches with np.corrcoef
+print(r,np.corrcoef(a,b)[0,1])
+     
+
+# compare r and c without mean-centering
+a = np.random.randn(15) + 10 # note the offset!
+b = np.random.randn(15)
+
+# mean-center
+aNoMean = a - np.mean(a)
+bNoMean = b - np.mean(b)
+
+
+# show the results with and without mean-centering
+print('Without mean-centering (should differ):')
+print( np.round(corrAndCosine(a,b),4) )
+print(' ')
+
+print('With mean-centering (should be the same):')
+print( np.round(corrAndCosine(aNoMean,bNoMean),4) )
+
+# NOTE: In the printing code above, I rounded to 4 significant digits just for visual clarity.
+
+
