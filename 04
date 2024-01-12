@@ -1,5 +1,79 @@
+https://github.com/Sancho-kim/LinAlg4DS
+
+
 #################################
 #4-1
+
+A = np.arange(12).reshape(3,4)
+print(A)
+
+M_A =int(input("Enter the matrix_row :  ", ))
+M_B =int(input("Enter the matrix_col :  ", ))
+print("The Matrix element at index ",  "(" , M_A ,  "," ,  M_B ,  ")" , "is", A[M_A-1][M_B-1] )
+
+
+
+# indexing
+
+A = np.arange(12).reshape(3,4)
+print(A)
+
+# find the element in the 2nd row, 4th column
+ri = 1
+ci = 3
+
+print(f'The matrix element at index ({ri+1},{ci+1}) is {A[ri,ci]}')
+
+
+
+
+
+#4-2
+A = np.arange(100).reshape(10,10)
+print(A)
+
+sub_A = A[ :4, 0:5]
+print(sub_A)
+
+
+
+
+#4-3
+A = np.arange(100).reshape(10,10)
+print(A)
+
+sub_A = A[ :5, 0:5]
+sub_B = A[ :5, 5:10]
+sub_C = A[5:10, 0:5]
+sub_D = A[5:10, 5:10]
+print(sub_A)
+print(sub_B)
+print(sub_C)
+print(sub_D)
+
+new_A = np.vstack((sub_D, sub_B))
+new_B = np.vstack((sub_C, sub_A))
+
+new_A = np.hstack((new_A, new_B))
+print(new_A)
+
+
+print(new_A)
+
+
+
+
+
+# cut it into blocks
+C_1 = C[0:5:1,0:5:1]
+C_2 = C[0:5:1,5:10:1]
+C_3 = C[5:10:1,0:5:1]
+C_4 = C[5:10:1,5:10:1]
+
+# rearrange the blocks
+newMatrix = np.vstack( (np.hstack((C_4,C_3)),
+                        np.hstack((C_2,C_1))) )
+
 
 
 
