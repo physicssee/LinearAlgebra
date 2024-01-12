@@ -1,0 +1,65 @@
+#################################
+#4-1
+
+
+
+
+
+#########################
+04
+
+A = np.arange(60).reshape(6,10)
+sub = A[1:3:1, 0:3:1]
+
+print(A)
+print(sub)
+
+Mrows = 4
+Ncols = 6
+A = np.random.randn(Mrows, Ncols)
+print(A)
+
+diagA=np.diag(A)
+print(diagA)
+
+diagB = np.diag([1,2,3,4,5])
+print(diagB)
+
+triuC = np.triu([1,1,3,1,5])
+print(triuC)
+
+eyeD = np.eye(3)
+print(eyeD)
+
+zeroE = np.zeros([3,2])
+
+print(zeroE)
+zeroE1 = np.zeros([3])
+print(zeroE1)
+
+
+zeroE1 = np.zeros(3)
+print(zeroE1)
+
+A = np.array([ [ 4,5,1], [0,1,11], [4,9,7]])
+s = 6
+print(A +6)
+print(A + s*np.eye(len(A)))
+
+
+A = np.array([ [1,2], [3,4] ])
+B = np.array([ [1,2], [3,4] ])
+print(A*B)
+print(np.multiply(A,B))
+print(A@B)
+
+M = np.array([ [2,3], [2,1] ])
+x = np.array([ [1, 1.5] ]).T
+Mx = M@x
+print(Mx)
+
+A = np.array([ [ 3,4,5], [1,2,3] ])
+A_T1 = A.T
+A_T2 = np.transpose(A)
+print(A_T1)
+print(A_T2)
