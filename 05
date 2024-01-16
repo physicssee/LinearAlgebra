@@ -1,0 +1,32 @@
+A = np.array([ [1,-1],[-2,2]])
+B = np.array([ [1,-1],[-2,3]])
+print(A)
+print(A[0, :])
+print("scipy.linalg.null_space(A)", scipy.linalg.null_space(A))   # 영공간 계산 단위 백터를 반환
+
+print( scipy.linalg.null_space(B))
+
+C = np.random.randn(3,3)
+print(C)
+print( scipy.linalg.null_space(C))
+print( np.linalg.norm(C))
+print(np.linalg.matrix_rank(C))
+print(np.linalg.det(C))
+print(np.linalg.det(A))
+print(np.linalg.det(B))
+
+
+Mrows = 10
+Ncols = 10
+A = np.random.randn(Mrows, Ncols)
+print(A)
+sum_a =0
+for i in range(Mrows):
+    for j in range(Ncols):
+        a = A[i][j]
+        a = a*a
+        sum_a += a
+F_norm = math.sqrt(sum_a)
+F_norm2= np.linalg.norm(A)
+print(F_norm)
+print(F_norm2)
